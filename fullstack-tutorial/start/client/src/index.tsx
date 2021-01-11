@@ -60,6 +60,7 @@ injectStyles();
 
 // Pass the ApolloClient instance to the ApolloProvider component
 ReactDOM.render(
+  //将client注入，子组件通过useApolloClient来拿上下文
     <ApolloProvider client={client}>
       <IsLoggedIn />
     </ApolloProvider>,

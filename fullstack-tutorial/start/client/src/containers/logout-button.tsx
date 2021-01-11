@@ -7,6 +7,7 @@ import { isLoggedInVar } from '../cache';
 import { ReactComponent as ExitIcon } from '../assets/icons/exit.svg';
 
 const LogoutButton = () => {
+  // 从provider拿上下文
   const client = useApolloClient();
   return (
     <StyledButton
