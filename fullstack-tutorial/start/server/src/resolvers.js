@@ -31,6 +31,7 @@ module.exports = {
   },
   //   写操作
   Mutation: {
+    //登录
     login: async (_, { email }, { dataSources }) => {
       const user = await dataSources.userAPI.findOrCreateUser({ email });
       if (user) {
@@ -38,6 +39,7 @@ module.exports = {
         return user;
       }
     },
+    //订阅这些
     bookTrips: async (_, { launchIds }, { dataSources }) => {
       const results = await dataSources.userAPI.bookTrips({ launchIds });
       const launches = await dataSources.launchAPI.getLaunchesByIds({

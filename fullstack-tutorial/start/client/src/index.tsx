@@ -18,7 +18,8 @@ export const typeDefs = gql`
     cartItems: [ID!]!
   }
 `;
-
+//@client告诉不要从服务端，而是从客户端拿数据
+//在这个项目里也就是cache的值
 const IS_LOGGED_IN = gql`
   query IsUserLoggedIn {
     isLoggedIn @client
@@ -27,6 +28,7 @@ const IS_LOGGED_IN = gql`
 
 function IsLoggedIn() {
   const { data } = useQuery(IS_LOGGED_IN);
+  console.warn(data);
   return data.isLoggedIn ? <Pages /> : <Login />;
 }
 

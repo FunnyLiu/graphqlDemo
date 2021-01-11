@@ -39,6 +39,7 @@ export const GET_LAUNCHES = gql`
 interface LaunchesProps extends RouteComponentProps {}
 
 const Launches: React.FC<LaunchesProps> = () => {
+  // 获取列表
   const { data, loading, error, fetchMore } = useQuery<
     GetLaunchListTypes.GetLaunchList,
     GetLaunchListTypes.GetLaunchListVariables
@@ -64,6 +65,7 @@ const Launches: React.FC<LaunchesProps> = () => {
           <Button
             onClick={async () => {
               setIsLoadingMore(true);
+              // 再次请求
               await fetchMore({
                 variables: {
                   after: data.launches.cursor,

@@ -24,6 +24,7 @@ export default function Login() {
       if (login) {
         localStorage.setItem("token", login.token as string);
         localStorage.setItem("userId", login.id as string);
+        //更新cache
         isLoggedInVar(true);
       }
     },

@@ -1,4 +1,5 @@
 import { InMemoryCache, Reference, makeVar } from "@apollo/client";
+import { IsUserLoggedIn } from './pages/__generated__/IsUserLoggedIn';
 
 export const cache: InMemoryCache = new InMemoryCache({
   typePolicies: {
