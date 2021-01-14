@@ -43,7 +43,7 @@ const Launches: React.FC<LaunchesProps> = () => {
   const { data, loading, error, fetchMore } = useQuery<
     GetLaunchListTypes.GetLaunchList,
     GetLaunchListTypes.GetLaunchListVariables
-  >(GET_LAUNCHES);
+  >(GET_LAUNCHES, { fetchPolicy: "network-only" });
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   if (loading) return <Loading />;
   if (error) return <p>ERROR</p>;

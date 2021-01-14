@@ -17,6 +17,7 @@ const store = createStore();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // 将dataSources挂载到context上下文
   dataSources: () => ({
     launchAPI: new LaunchAPI(),
     userAPI: new UserAPI({ store }),
